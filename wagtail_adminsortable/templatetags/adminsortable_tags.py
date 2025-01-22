@@ -2,7 +2,7 @@ from django.template import Library
 from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
 from django.contrib.admin.templatetags.admin_list import result_headers
-from wagtail.contrib.modeladmin.templatetags.modeladmin_tags import results
+from wagtail_modeladmin.templatetags.modeladmin_tags import results
 
 register = Library()
 
@@ -41,7 +41,7 @@ def sortable_result_row_display(context, index):
         row_attrs_dict['class'] += ' %s' % odd_or_even
     else:
         row_attrs_dict['class'] = odd_or_even
-
+    
     context.update({
         'obj': obj,
         'row_attrs': mark_safe(flatatt(row_attrs_dict)),
